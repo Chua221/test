@@ -10,18 +10,6 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
-    public function ViewMain(){
-        return view('main');
-    }
-
-    public function ViewLogin(){
-        return view('login');
-    } 
-
-    public function ViewRegister(){
-        return view('register');
-    } 
-
     public function RegisterFunction(Request $request){
         $insert=$request->validate([
             'name'=>['required',Rule::unique('users','name')],
@@ -43,5 +31,12 @@ class UserController extends Controller
         }else{
             return back()->with('message','Login Failed');
         }
+    }
+
+    public function LogoutFunction(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login')->with('message','Logout Success');
     }
 }
