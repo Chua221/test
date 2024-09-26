@@ -18,6 +18,7 @@
 </style>
 </head>
 <body>
+    <h1>{{ Auth::user()->name }}</h1>
     <table border>
             <tr>
                 <th>Name</th>
@@ -28,10 +29,10 @@
             </tr>
         @foreach ($alldata as $item)
             <tr>
-                <td>{{ $item['p_name'] }}</td>
-                <td><img src="{{ asset('storage/'.$item['p_image']) }}" ></td>
-                <td>{{ $item['p_mass'] }}</td>
-                <td>{{ $item['p_price'] }}</td>
+                <td>{{ $item['name'] }}</td>
+                <td><img src="{{ asset('storage/'.$item['image']) }}" ></td>
+                <td>{{ $item['mass'] }}</td>
+                <td>{{ $item['price'] }}</td>
                 <td><button type="button"><a href="{{ route('view',['id'=>$item['id']]) }}">View Product</a></button></td>
             </tr>
         @endforeach
@@ -40,5 +41,6 @@
         @csrf
         <input type="submit" value="Logout">
     </form>
+    <a href="cart">Cart</a>
 </body>
 </html>

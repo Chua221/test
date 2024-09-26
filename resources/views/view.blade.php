@@ -8,17 +8,19 @@
 </head>
 <body>
     <center>
-        <form action="" method="POST">
+        <form action="{{ route('addtocart',$product['id']) }}" method="POST">
+            @csrf
             <label for="">Image</label><br>
-            <img src="{{ asset('storage/'.$product['p_image']) }}"  style="height:300px; wieth:auto;"><br>
+            <img src="{{ asset('storage/'.$product['image']) }}"  style="height:300px; wieth:auto;"><br>
             <label for="">Mass</label><br>
-            <input type="number" id="1" min="100" step="50" value="{{ $product['p_mass'] }}" oninput="cal()" ><br>
+            <input type="number" id="1" min="100" step="50" value="{{ $product['mass'] }}" oninput="cal()" name="p_mass"><br>
             <label for="">Price</label><br>
-            <input type="number" id="2" readonly  value="{{ $product['p_price'] }}"><br>
+            <input type="number" id="2" readonly  value="{{ $product['price'] }}"><br>
             <label for="">Totle Price</label><br>
-            <input type="number" id="3"><br>
+            <input type="number" id="3" name="p_price"><br>
             <a href="/">back</a>
-            <input type="submit" name="submit">
+            <button type="submit">Add To Cart</button>
+            <input type="submit" name="submit" value="">
         </form>
     </center>
 </body>

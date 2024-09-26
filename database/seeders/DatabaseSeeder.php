@@ -22,31 +22,31 @@ class DatabaseSeeder extends Seeder
         ]);
 
         products::create([
-            'p_name' => 'Tomato',
-            'p_image' => 'image/111.jpg',
-            'p_mass' => '100',
-            'p_price' => '3',
+            'name' => 'Tomato',
+            'image' => 'image/111.jpg',
+            'mass' => '100',
+            'price' => '3',
         ]);
 
         products::create([
-            'p_name' => 'Potato',
-            'p_image' => 'image/222.jpeg',
-            'p_mass' => '100',
-            'p_price' => '2',
+            'name' => 'Potato',
+            'image' => 'image/222.jpeg',
+            'mass' => '100',
+            'price' => '2',
         ]);
 
         products::create([
-            'p_name' => 'Cucumber',
-            'p_image' => 'image/333.png',
-            'p_mass' => '100',
-            'p_price' => '4',
+            'name' => 'Cucumber',
+            'image' => 'image/333.png',
+            'mass' => '100',
+            'price' => '4',
         ]);
 
         products::create([
-            'p_name' => 'Carbage',
-            'p_image' => 'image/666.jpg',
-            'p_mass' => '100',
-            'p_price' => '5',
+            'name' => 'Carbage',
+            'image' => 'image/666.jpg',
+            'mass' => '100',
+            'price' => '5',
         ]);
     }
 }
