@@ -44,8 +44,8 @@ class UserController extends Controller
     }
 
     public function AddToCartFunction(Request $request,products $id){
-        $condition=carts::where('user_id','=',Auth::user()->id)->where('p_id','=',$id->id)->get();
-        if (count($condition)===0) {
+        $condition=carts::where('user_id',Auth::user()->id)->where('p_id',$id->id)->get();
+        if ($condition) {
             $addtocart=$request->validate([
                 'p_mass'=>'required|numeric|min:100',
                 'p_price'=>'required',
@@ -57,7 +57,7 @@ class UserController extends Controller
             carts::create($addtocart);
             return redirect('/')->with('message','Add To Cart Success');
         }else {
-            return redirect('/')->with('message','Add To Cart Failed Because There Have Same Product At Cart');
+            return redirect('/')->with('message','Add To Cart Failed Because There Have Same Product At');
         }
         
     }

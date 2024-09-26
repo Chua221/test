@@ -20,7 +20,6 @@
             <input type="number" id="3" name="p_price"><br>
             <a href="/">back</a>
             <button type="submit">Add To Cart</button>
-            <input type="submit" name="submit" value="">
         </form>
     </center>
 </body>
